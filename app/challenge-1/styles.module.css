@@ -1,0 +1,22 @@
+.page {
+  --main-color: #00F9C1;
+
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  min-height: 100vh;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 500px;
+  }
+
+}
