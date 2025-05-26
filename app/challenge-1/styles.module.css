@@ -45,10 +45,19 @@
       font-weight: bold;
       border: 2px solid var(--primary-color);
 
+
       &:hover {
         color: #fff;
         background-color: var(--primary-color);
       }
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+      width: 100%;
+      font-weight: bold;
     }
   }
 
