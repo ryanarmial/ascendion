@@ -50,6 +50,13 @@
         color: #fff;
         background-color: var(--primary-color);
       }
+
+      &:disabled {
+        background-color: #ccc;
+        color: #666;
+        cursor: not-allowed;
+        border-color: #ccc;
+      }
     }
 
     p {

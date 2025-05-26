@@ -26,7 +26,7 @@ export default function Page() {
         <h2>Adding Two Numbers</h2>
         <input value={inputNumbers[0] || ''} onChange={(e) => onChangeNumber(0, e.target.value)} type="text" placeholder="First Number" />
         <input value={inputNumbers[1] || ''} onChange={(e) => onChangeNumber(1, e.target.value)} type="number" placeholder="Second Number" />
-        <button onClick={handleAddNumbers}>Add Two Number</button>
+        <button disabled={!inputNumbers[0] || !inputNumbers[1]} onClick={handleAddNumbers}>Add Two Number</button>
         <p>Total: {total}</p>
       </div>
     </div>
