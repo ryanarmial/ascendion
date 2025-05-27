@@ -114,27 +114,39 @@
       }
     }
 
-      /* .logo {
-        padding: 20px 0;
+    .search_wrapper {
+      display: grid;
+      transition: all 0.3s ease-in-out;
+      grid-template-rows:0fr;
+      overflow: hidden;
+
+      &.open_search {
+        grid-template-rows: 1fr;
       }
 
+      .search {
+        overflow: hidden;
+        display: flex;
 
+        input {
+          flex-grow: 1;
+          display: flex;
+          margin: 10px 20px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-color: #ccc;
+          color: #000;
+          overflow: hidden !important;
 
-
-    .search {
-      min-width: 230px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      background-color: #ccc;
-      color: #000;
-
-      &:focus {
-        background-color: transparent;
-        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
-        outline: none;
+          &:focus {
+            background-color: transparent;
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.75);
+            outline: none;
+          }
+        }
       }
-    } */
+    }
   }
 }
 

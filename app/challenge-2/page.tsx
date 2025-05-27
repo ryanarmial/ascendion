@@ -6,6 +6,17 @@ import styles from './style.module.css';
 
 export default function Page() {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
+  const [isOpenSearch, setIsOpenSearch] = useState<boolean>(false);
+
+  const toggleSearch = () => {
+    setIsOpenSearch(!isOpenSearch);
+    setIsOpenMenu(false);
+  }
+
+  const toggleMenu = () => {
+    setIsOpenMenu(!isOpenMenu);
+    setIsOpenSearch(false);
+  }
 
   return (
     <div className={styles.page}>
@@ -14,8 +25,10 @@ export default function Page() {
           <div className={styles.main_header}>
             <a className={styles.logo} href="/">ASCENDION</a>
             <div className={styles.icon_wrapper}>
-              <IconSearch/>
-              <div className={styles.icon_menu_wrapper} onClick={() => setIsOpenMenu(!isOpenMenu)}>
+              <div onClick={toggleSearch}>
+                <IconSearch />
+              </div>
+              <div className={styles.icon_menu_wrapper} onClick={toggleMenu}>
                 <div className={`${styles.icon_menu} ${isOpenMenu ? styles.open_menu : ''}`}/>
               </div>
             </div>
@@ -31,9 +44,11 @@ export default function Page() {
               <li><a href="/">Enterprise</a></li>
             </ul>
           </div>
-          {/* <div>
-            <input className={styles.search} type="text" placeholder="Search Documentation..." />
-          </div> */}
+          <div className={`${styles.search_wrapper} ${isOpenSearch ? styles.open_search : ''}`}>
+            <div className={styles.search}>
+              <input type="text" placeholder="Search Documentation..." />
+            </div>
+          </div>
         </div>
       </div>
     </div>
