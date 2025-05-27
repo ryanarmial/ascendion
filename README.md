@@ -27,4 +27,4 @@ Page URL
 - Challenge 1 - `/app/challenge-1/page.tsx`
 - Challenge 2 - `/app/challenge-2/page.tsx`
 - Challenge 3 - `/app/challenge-3/page.tsx`
-  - for answer logic challenge 3 on `/app/challenge-3/challenge-3.helper.ts`
+  - for logic challenge 3 answer on `/app/challenge-3/challenge-3.helper.ts`
