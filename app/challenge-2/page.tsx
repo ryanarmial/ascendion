@@ -18,7 +18,7 @@ export default function Page() {
           </ul>
         </div>
         <div>
-          <input className={styles.search} type="text" placeholder="Search Documentation" />
+          <input className={styles.search} type="text" placeholder="Search Documentation..." />
         </div>
       </div>
     </div>
