@@ -8,6 +8,7 @@ export default function Page() {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
   const [isOpenSearch, setIsOpenSearch] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const inputSearchRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -28,6 +29,7 @@ export default function Page() {
   },[])
 
   const toggleSearch = () => {
+    inputSearchRef.current?.focus();
     setIsOpenSearch(!isOpenSearch);
     setIsOpenMenu(false);
   }
@@ -65,7 +67,7 @@ export default function Page() {
           </div>
           <div className={`${styles.search_wrapper} ${isOpenSearch ? styles.open_search : ''}`}>
             <div className={styles.search}>
-              <input type="text" placeholder="Search Documentation..." />
+              <input ref={inputSearchRef} type="text" placeholder="Search Documentation..." />
             </div>
           </div>
         </div>
