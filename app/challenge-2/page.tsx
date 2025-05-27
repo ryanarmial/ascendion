@@ -1,9 +1,11 @@
+import styles from './style.module.css';
+
 export default function Page() {
 
   return (
-    <div>
-      <div>
-        <div>
+    <div className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.left_section}>
           <a href="/">ASCENDION</a>
           <ul>
             <li><a href="/">Showcase</a></li>
