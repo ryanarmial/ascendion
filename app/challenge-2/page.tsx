@@ -15,7 +15,9 @@ export default function Page() {
             <a className={styles.logo} href="/">ASCENDION</a>
             <div className={styles.icon_wrapper}>
               <IconSearch/>
-              <div onClick={() => setIsOpenMenu(!isOpenMenu)} className={`${styles.icon_menu} ${isOpenMenu ? styles.open_menu : ''}`}/>
+              <div className={styles.icon_menu_wrapper} onClick={() => setIsOpenMenu(!isOpenMenu)}>
+                <div className={`${styles.icon_menu} ${isOpenMenu ? styles.open_menu : ''}`}/>
+              </div>
             </div>
           </div>
           <div className={`${styles.nav_links} ${isOpenMenu ? styles.active : ''}`}>
