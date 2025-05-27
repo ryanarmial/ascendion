@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import styles from './style.module.css';
+import styles from '../form.module.css';
 
 export default function Page() {
   const [inputNumbers, setInputNumbers] = useState<Array<number | string>>(['', '']);
