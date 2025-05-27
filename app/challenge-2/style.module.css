@@ -33,56 +33,58 @@
         display: flex;
         align-items: center;
         cursor: pointer;
-        gap: 12px;
-      }
+        gap: 16px;
+        line-height: 0;
 
-      .icon_menu_wrapper {
-        display: flex;
-        height: 18px;
-        align-items: center;
+        .icon_menu_wrapper {
+          display: flex;
+          height: 18px;
+          align-items: center;
 
-        .icon_menu {
-          width: 20px;
-          height: 2px;
-          background-color: var(--base-color);
-          margin: 4px 0;
-          transition: all 0.3s ease-in-out;
-          position: relative;
-
-          &::after,
-          &&::before {
-            content: '';
-            display: block;
+          .icon_menu {
             width: 20px;
             height: 2px;
             background-color: var(--base-color);
-            transition: transform 0.3s ease-in-out;
-            position: absolute;
-          }
+            margin: 4px 0;
+            transition: all 0.3s ease-in-out;
+            position: relative;
 
-          &::before {
-            top: -6px;transform:
-          }
-
-          ;
-
-          &::after {
-            bottom: -6px;
-          }
-
-          ;
-
-          &.open_menu {
-            background-color: transparent;
-
-            &::before {
-              transform: rotate(45deg);
-              top: 0px;
+            &::after,
+            &&::before {
+              content: '';
+              display: block;
+              width: 20px;
+              height: 2px;
+              background-color: var(--base-color);
+              transition: transform 0.3s ease-in-out;
+              position: absolute;
             }
 
+            &::before {
+              top: -6px;
+              transform:
+            }
+
+            ;
+
             &::after {
-              transform: rotate(-45deg);
-              bottom: 0px;
+              bottom: -6px;
+            }
+
+            ;
+
+            &.open_menu {
+              background-color: transparent;
+
+              &::before {
+                transform: rotate(45deg);
+                top: 0px;
+              }
+
+              &::after {
+                transform: rotate(-45deg);
+                bottom: 0px;
+              }
             }
           }
         }

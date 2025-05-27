@@ -1,12 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import IconSearch from './IconSearch';
 import styles from './style.module.css';
 
 export default function Page() {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
   const [isOpenSearch, setIsOpenSearch] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const clickOutsideListener = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpenMenu(false);
+        setIsOpenSearch(false);
+      }
+    }
+
+    document.addEventListener('click', clickOutsideListener, { signal: controller.signal });
+
+    return () => {
+      controller.abort();
+    }
+
+  },[])
 
   const toggleSearch = () => {
     setIsOpenSearch(!isOpenSearch);
@@ -21,7 +40,7 @@ export default function Page() {
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <div className={styles.container}>
+        <div className={styles.container} ref={menuRef}>
           <div className={styles.main_header}>
             <a className={styles.logo} href="/">ASCENDION</a>
             <div className={styles.icon_wrapper}>
