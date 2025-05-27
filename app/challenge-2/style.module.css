@@ -41,7 +41,7 @@
         height: 2px;
         background-color:var(--base-color);
         margin: 4px 0;
-        transition: background-color 0.3s, transform 0.3s;
+        transition: all 0.3s ease-in-out;
         position: relative;
 
         &::after, &&::before {
@@ -50,7 +50,7 @@
           width: 20px;
           height: 2px;
           background-color:var(--base-color);
-          transition: transform 0.6s ease-in-out;
+          transition: transform 0.3s ease-in-out;
           position: absolute;
         }
 
@@ -61,7 +61,7 @@
           bottom: -6px;
         };
 
-        &.active {
+        &.open_menu {
           background-color: transparent;
 
           &::before {
@@ -77,26 +77,27 @@
     }
 
     .nav_links {
-      overflow: hidden;
-      height: 0;
-      list-style: none;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      transition: height 0.6s ease-in-out;
+      display: grid;
+      transition: all 0.3s ease-in-out;
+      grid-template-rows:0fr;
 
       &.active {
-        height:100%;
+        grid-template-rows: 1fr;
       }
 
-      li a {
+      ul {
+        overflow: hidden;
+        list-style: none;
+        margin: 0;
+
+        li a {
         padding: 16px 20px;
         display: block;
         transition: background-color .6s;
 
         &:hover {
           background-color: #f0f0f0;
-        }
+        } }
       }
     }
 
