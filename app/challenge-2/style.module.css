@@ -1,3 +1,7 @@
+:root {
+  --base-color: #555;
+}
+
 .header {
   border-bottom: 1px solid #ccc;
 
@@ -16,9 +20,54 @@
         font-size: 16px;
         font-weight: bold;
         letter-spacing: 0.06em;
+        color: var(--base-color);
       }
 
+      .icon_wrapper {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        gap: 12px;
+      }
 
+      .icon_menu {
+        width: 20px;
+        height: 2px;
+        background-color:var(--base-color);
+        margin: 4px 0;
+        transition: background-color 0.3s, transform 0.3s;
+        position: relative;
+
+        &::after, &&::before {
+          content: '';
+          display: block;
+          width: 20px;
+          height: 2px;
+          background-color:var(--base-color);
+          transition: transform 0.3s;
+          position: absolute;
+        }
+
+        &::before {
+          top: -6px;
+        };
+        &::after {
+          bottom: -6px;
+        };
+
+        &.active {
+          background-color: transparent;
+
+          &::before {
+            transform: rotate(45deg);
+            top: 0px;
+          }
+
+          &::after {
+            transform: rotate(-45deg);bottom: 0px;
+          }
+        }
+      }
     }
 
       /* .logo {

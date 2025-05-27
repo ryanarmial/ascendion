@@ -8,8 +8,9 @@ export default function Page() {
       <div className={styles.container}>
         <div className={styles.main_header}>
           <a className={styles.logo} href="/">ASCENDION</a>
-          <div>
+          <div className={styles.icon_wrapper}>
             <IconSearch/>
+            <div className={`${styles.icon_menu} ${styles.active}`}/>
           </div>
         </div>
         {/* <ul className={styles.nav_links}>
